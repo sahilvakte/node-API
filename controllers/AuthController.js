@@ -25,7 +25,8 @@ const register = (req, res, next) => {
           message: "User Added Successfully !",
         });
       })
-      .catch((user) => {
+      .catch((error) => {
+        console.log("Error",error)
         res.json({
           message: "An Error Occured !!!",
         });
@@ -53,7 +54,7 @@ const login = (req, res, next) => {
 
           // if comapre match login success and creates a token
           if (result) {
-            let token = jwt.sign({ name: user.name }, "verySecretValue", {
+            let token = jwt.sign({ _id: user._id }, "verySecretValue", {
               expiresIn: "1h",
             }); //{expiresIn:'1h'} time for login
             res.json({

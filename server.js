@@ -29,6 +29,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/uploads',express.static('uploads')) //to show file publically
 
 const PORT = process.env.PORT || 3000;
 
