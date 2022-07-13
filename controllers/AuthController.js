@@ -54,7 +54,7 @@ const login = (req, res, next) => {
 
           // if comapre match login success and creates a token
           if (result) {
-            let token = jwt.sign({ _id: user._id }, "verySecretValue", {
+            let token = jwt.sign({ _id: user._id }, "AzQ,PI)0(", {
               expiresIn: "1h",
             }); //{expiresIn:'1h'} time for login
             res.json({
